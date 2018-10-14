@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6584B1D2-CDDA-4A10-BDFF-55A5496624C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NSites_V</RootNamespace>
+    <AssemblyName>NSites_V</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Main\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nsites_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.PointOfService.Admin, Version=1.12.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Main\Microsoft.PointOfService.Admin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationObjects\Classes\Lendings\LoanEndOfDayDetail.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\LoanEndOfDay.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\LoanApplicationDetail.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\LoanApplication.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\Product.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\Collector.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\Zone.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\Branch.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\Area.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\ClientCreditExperience.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\ClientOwnedProperty.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\ClientSourceOfIncome.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\ClientPersonalReference.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\ClientFamilyMember.cs" />
+    <Compile Include="ApplicationObjects\Classes\Lendings\Client.cs" />
+    <Compile Include="ApplicationObjects\Classes\Systems\AuditTrail.cs" />
+    <Compile Include="ApplicationObjects\Classes\Generics\Common.cs" />
+    <Compile Include="ApplicationObjects\Classes\Systems\SystemConfiguration.cs" />
+    <Compile Include="ApplicationObjects\Classes\Systems\User.cs" />
+    <Compile Include="ApplicationObjects\Classes\Systems\UserGroup.cs" />
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\AreaDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\AreaDetailUI.Designer.cs">
+      <DependentUpon>AreaDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\BranchDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\BranchDetailUI.Designer.cs">
+      <DependentUpon>BranchDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientCreditExperienceDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientCreditExperienceDetailUI.Designer.cs">
+      <DependentUpon>ClientCreditExperienceDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientDetailUI.Designer.cs">
+      <DependentUpon>ClientDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientFamilyMemberDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientFamilyMemberDetailUI.Designer.cs">
+      <DependentUpon>ClientFamilyMemberDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientOwnedPropertyDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientOwnedPropertyDetailUI.Designer.cs">
+      <DependentUpon>ClientOwnedPropertyDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientPersonalReferenceDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientPersonalReferenceDetailUI.Designer.cs">
+      <DependentUpon>ClientPersonalReferenceDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientSourceOfIncomeDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientSourceOfIncomeDetailUI.Designer.cs">
+      <DependentUpon>ClientSourceOfIncomeDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\CollectorDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\CollectorDetailUI.Designer.cs">
+      <DependentUpon>CollectorDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ListFormLendingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ListFormLendingUI.Designer.cs">
+      <DependentUpon>ListFormLendingUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ProductDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ProductDetailUI.Designer.cs">
+      <DependentUpon>ProductDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ZoneDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ZoneDetailUI.Designer.cs">
+      <DependentUpon>ZoneDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\ClientLedgerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\ClientLedgerUI.Designer.cs">
+      <DependentUpon>ClientLedgerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\MonthlyCollectionsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\MonthlyCollectionsUI.Designer.cs">
+      <DependentUpon>MonthlyCollectionsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\MonthlyProjectionsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\MonthlyProjectionsUI.Designer.cs">
+      <DependentUpon>MonthlyProjectionsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\PastDueAccountsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\PastDueAccountsUI.Designer.cs">
+      <DependentUpon>PastDueAccountsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\ReportsRpt\MonthlyCollectionsRpt.cs">
+      <DependentUpon>MonthlyCollectionsRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\ReportsRpt\MonthlyProjectionsRpt.cs">
+      <DependentUpon>MonthlyProjectionsRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\ReportsRpt\PastDueAccountsRpt.cs">
+      <DependentUpon>PastDueAccountsRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\DailyCollectionAndReleaseSheetRpt1.cs">
+      <DependentUpon>DailyCollectionAndReleaseSheetRpt1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\DailyCollectionAndReleaseSheetRpt.cs">
+      <DependentUpon>DailyCollectionAndReleaseSheetRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\ForReleaseRpt.cs">
+      <DependentUpon>ForReleaseRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\DailyCollectionRpt.cs">
+      <DependentUpon>DailyCollectionRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\EndOfDayRpt.cs">
+      <DependentUpon>EndOfDayRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\Details\EndOfDayDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\Details\EndOfDayDetailUI.Designer.cs">
+      <DependentUpon>EndOfDayDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\Details\LendingCancelReasonUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\Details\LendingCancelReasonUI.Designer.cs">
+      <DependentUpon>LendingCancelReasonUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\Details\LoanApplicationDetailsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\Details\LoanApplicationDetailsUI.Designer.cs">
+      <DependentUpon>LoanApplicationDetailsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\EndOfDayUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\EndOfDayUI.Designer.cs">
+      <DependentUpon>EndOfDayUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\LoanApplicationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\LoanApplicationUI.Designer.cs">
+      <DependentUpon>LoanApplicationUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\DownloadDCRSUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\DownloadDCRSUI.Designer.cs">
+      <DependentUpon>DownloadDCRSUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\UploadCollectionsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\UploadCollectionsUI.Designer.cs">
+      <DependentUpon>UploadCollectionsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\ApplicationStarter.cs" />
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReport1.cs">
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\SoftwareLicenseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\SoftwareLicenseUI.Designer.cs">
+      <DependentUpon>SoftwareLicenseUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\DatabaseBackupRestoreUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\DatabaseBackupRestoreUI.Designer.cs">
+      <DependentUpon>DatabaseBackupRestoreUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\ReportRpt\UserGroupRpt.cs">
+      <DependentUpon>UserGroupRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\ReportRpt\UserRpt.cs">
+      <DependentUpon>UserRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\TechnicalUpdateUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\TechnicalUpdateUI.Designer.cs">
+      <DependentUpon>TechnicalUpdateUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailUI.Designer.cs">
+      <DependentUpon>AuditTrailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\DataSetRpt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailRpt.cs">
+      <DependentUpon>AuditTrailRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLegalLandscape.cs">
+      <DependentUpon>CrystalReportLegalLandscape.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLandscape.cs">
+      <DependentUpon>CrystalReportLandscape.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLegal.cs">
+      <DependentUpon>CrystalReportLegal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\ReportViewerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\ReportViewerUI.Designer.cs">
+      <DependentUpon>ReportViewerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\LogInUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\LogInUI.designer.cs">
+      <DependentUpon>LogInUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\ListFormSystemUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\ListFormSystemUI.designer.cs">
+      <DependentUpon>ListFormSystemUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\MDIUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\MDIUI.designer.cs">
+      <DependentUpon>MDIUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\ChangeUserPasswordUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\ChangeUserPasswordUI.designer.cs">
+      <DependentUpon>ChangeUserPasswordUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\ScreenSaverUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\ScreenSaverUI.designer.cs">
+      <DependentUpon>ScreenSaverUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\SystemConfigurationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\SystemConfigurationUI.designer.cs">
+      <DependentUpon>SystemConfigurationUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\UnlockScreenUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\UnlockScreenUI.designer.cs">
+      <DependentUpon>UnlockScreenUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupListUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupListUI.Designer.cs">
+      <DependentUpon>UserGroupListUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupDetailUI.designer.cs">
+      <DependentUpon>UserGroupDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserDetailUI.designer.cs">
+      <DependentUpon>UserDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\ErrorMessageUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\ErrorMessageUI.Designer.cs">
+      <DependentUpon>ErrorMessageUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\GmailHandler.cs" />
+    <Compile Include="Global\CryptorEngine.cs" />
+    <Compile Include="Global\DataTimePickerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\DataTimePickerUI.designer.cs">
+      <DependentUpon>DataTimePickerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\GlobalClassHandler.cs" />
+    <Compile Include="Global\GlobalFunctions.cs" />
+    <Compile Include="Global\GlobalVariables.cs" />
+    <Compile Include="Global\LookUpValueUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\LookUpValueUI.designer.cs">
+      <DependentUpon>LookUpValueUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\MessageBoxInputUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\MessageBoxInputUI.designer.cs">
+      <DependentUpon>MessageBoxInputUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\MessageBoxUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\MessageBoxUI.designer.cs">
+      <DependentUpon>MessageBoxUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\SearchesUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\SearchesUI.Designer.cs">
+      <DependentUpon>SearchesUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\SearchUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\SearchUI.designer.cs">
+      <DependentUpon>SearchUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\AreaDetailUI.resx">
+      <DependentUpon>AreaDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\BranchDetailUI.resx">
+      <DependentUpon>BranchDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientCreditExperienceDetailUI.resx">
+      <DependentUpon>ClientCreditExperienceDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientDetailUI.resx">
+      <DependentUpon>ClientDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientFamilyMemberDetailUI.resx">
+      <DependentUpon>ClientFamilyMemberDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientOwnedPropertyDetailUI.resx">
+      <DependentUpon>ClientOwnedPropertyDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientPersonalReferenceDetailUI.resx">
+      <DependentUpon>ClientPersonalReferenceDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ClientSourceOfIncomeDetailUI.resx">
+      <DependentUpon>ClientSourceOfIncomeDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\CollectorDetailUI.resx">
+      <DependentUpon>CollectorDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ListFormLendingUI.resx">
+      <DependentUpon>ListFormLendingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ProductDetailUI.resx">
+      <DependentUpon>ProductDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Masterfiles\ZoneDetailUI.resx">
+      <DependentUpon>ZoneDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\ClientLedgerUI.resx">
+      <DependentUpon>ClientLedgerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\MonthlyCollectionsUI.resx">
+      <DependentUpon>MonthlyCollectionsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\MonthlyProjectionsUI.resx">
+      <DependentUpon>MonthlyProjectionsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\PastDueAccountsUI.resx">
+      <DependentUpon>PastDueAccountsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\ReportsRpt\MonthlyCollectionsRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthlyCollectionsRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\ReportsRpt\MonthlyProjectionsRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthlyProjectionsRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\ReportsRpt\PastDueAccountsRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PastDueAccountsRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\DailyCollectionAndReleaseSheetRpt1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DailyCollectionAndReleaseSheetRpt1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\DailyCollectionAndReleaseSheetRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DailyCollectionAndReleaseSheetRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\ForReleaseRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ForReleaseRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\DailyCollectionRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DailyCollectionRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Reports\TransactionsRpt\EndOfDayRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EndOfDayRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\Details\EndOfDayDetailUI.resx">
+      <DependentUpon>EndOfDayDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\Details\LendingCancelReasonUI.resx">
+      <DependentUpon>LendingCancelReasonUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\Details\LoanApplicationDetailsUI.resx">
+      <DependentUpon>LoanApplicationDetailsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\EndOfDayUI.resx">
+      <DependentUpon>EndOfDayUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\LoanApplicationUI.resx">
+      <DependentUpon>LoanApplicationUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\DownloadDCRSUI.resx">
+      <DependentUpon>DownloadDCRSUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Lendings\Transactions\UploadCollectionsUI.resx">
+      <DependentUpon>UploadCollectionsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\SoftwareLicenseUI.resx">
+      <DependentUpon>SoftwareLicenseUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\DatabaseBackupRestoreUI.resx">
+      <DependentUpon>DatabaseBackupRestoreUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Reports\ReportRpt\UserGroupRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UserGroupRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Reports\ReportRpt\UserRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UserRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\TechnicalUpdateUI.resx">
+      <DependentUpon>TechnicalUpdateUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailUI.resx">
+      <DependentUpon>AuditTrailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AuditTrailRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLegalLandscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportLegalLandscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLandscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportLandscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLegal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportLegal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\ReportViewerUI.resx">
+      <DependentUpon>ReportViewerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\LogInUI.resx">
+      <DependentUpon>LogInUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\ListFormSystemUI.resx">
+      <DependentUpon>ListFormSystemUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\MDIUI.resx">
+      <DependentUpon>MDIUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\ChangeUserPasswordUI.resx">
+      <DependentUpon>ChangeUserPasswordUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\ScreenSaverUI.resx">
+      <DependentUpon>ScreenSaverUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\SystemConfigurationUI.resx">
+      <DependentUpon>SystemConfigurationUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\UnlockScreenUI.resx">
+      <DependentUpon>UnlockScreenUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupListUI.resx">
+      <DependentUpon>UserGroupListUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupDetailUI.resx">
+      <DependentUpon>UserGroupDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserDetailUI.resx">
+      <DependentUpon>UserDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\DataTimePickerUI.resx">
+      <DependentUpon>DataTimePickerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\ErrorMessageUI.resx">
+      <DependentUpon>ErrorMessageUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\LookUpValueUI.resx">
+      <DependentUpon>LookUpValueUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\MessageBoxInputUI.resx">
+      <DependentUpon>MessageBoxInputUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\MessageBoxUI.resx">
+      <DependentUpon>MessageBoxUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\SearchesUI.resx">
+      <DependentUpon>SearchesUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\SearchUI.resx">
+      <DependentUpon>SearchUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSetRpt.xsc">
+      <DependentUpon>DataSetRpt.xsd</DependentUpon>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSetRpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRpt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSetRpt.xss">
+      <DependentUpon>DataSetRpt.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApplicationObjects\UserInterfaces\Lendings\Reports\MasterfilesRpt\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nsites_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
